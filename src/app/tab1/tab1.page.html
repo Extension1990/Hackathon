@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="bg-color">
+    <ion-title color="light">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <!-- Content -->
+  <ion-card class="danger" *ngFor="let country of countries">
+      <img src="{{ country.flag }}">
+      <ion-card-header>
+        <ion-card-subtitle color="dark">{{ country.nativeName }}</ion-card-subtitle>
+        <ion-card-title>{{ country.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content color="dark">
+        <p>Region: {{country.region}}</p>
+      </ion-card-content>
+      
+        <ion-button color="primary" (click)="presentModal()">Get Quote</ion-button>
+      
+    </ion-card>
+  
+
+  <!-- Menu button -->
+  <ion-fab vertical="bottom" horizontal="end">
+
+    <ion-fab-button class="button-color" slot="fixed">Menu</ion-fab-button>
+  
+    <ion-fab-list side="top">
+      <ion-fab-button color="light" tooltip="Services" positionV="bottom" arrow><i class="fab fa-servicestack"></i></ion-fab-button>
+      <ion-fab-button color="secondary"><i class="fab fa-facebook-f"></i></ion-fab-button>
+      <ion-fab-button color="success"><i class="fas fa-gifts"></i></ion-fab-button>
+      <ion-fab-button color="primary" routerLink="/login" routerLinkActive><i class="fas fa-sign-out-alt"></i></ion-fab-button>
+    </ion-fab-list>
+  
+  </ion-fab>
+</ion-content>
